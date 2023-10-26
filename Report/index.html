@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@300&display=swap" rel="stylesheet">
+    <title>CS Project 2023</title>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="selection-bar">
+            <!-- <a href="#summary-word-count">Summary Word Count</a> -->
+            <a class="active" href="#meeting-the-brief">Meeting The Brief</a>
+            <a href="#investigation-and-plan">Investigation and Plan</a>
+            <a href="#design">Design</a>
+            <a href="#implementation">Implementation</a>
+            <a href="#testing">Testing</a>
+            <a href="#evaluation">Evaluation</a>
+            <a href="#references">References</a>
+        </div>
+        <div class="title-bar">
+            <h3 class="heading"><strong>Computer Science</strong> <br> Leaving Certificate Examination 2023</h3>
+        </div>
+    </div>
+    <div class="headnote">
+        <div class="headnote-text">
+            <h1 class="heading">Computer Science</h1>
+            <h2 class="heading">Leaving Certificate Examination 2023</h2>
+            <h3 class="heading">Higher Level</h3>
+            <h3 class="heading">Examination number: 125401</h3>
+        </div>
+    </div>
+    <div class="mainbody">
+        <div class="text-sections" id="meeting-the-brief">
+            <iframe src="videos/Render.mp4" title="Computer Science Leaving Cert Video" width="500" height="280" frameborder="0" allowfullscreen="true"></iframe>
+            <br><br><br><br><br>
+            <h4 class="bottom-heading">Meeting the Brief</h4>
+            <h5 class="heading">Basic requirements</h5>
+            <p>
+                <img class="an-image" id="meet-breif-basic" alt="board_1" src="images/importing_random.png" width="40%" style="float: right;">
+                <ol>
+                    <li>I have designed and developed an interactive computer model based on the game Connect Four. The user can interact with my model through the console so that they can <strong>play the game to completion</strong>. The images below show three examples of the end states of my game in which a human player plays against a computer player. I imported the library 'random' (shown in the image to the right) <strong>in order to achieve randomness</strong> in my model allowing it to behave differently each time it is run.</li>
+                    <br>
+                    <li>My model accepts more than <strong>three different inputs</strong>. These inputs can be but are not limited to, (i) the dimensions of the game, (ii) what mode the game is played in and, (iii) what column the user would like to slot their piece into. The inputted data is <strong>validated</strong> using functions to check whether the inputs are in the correct data type. They also check if the inputs are in the <strong>appropriately defined validation rules</strong>. An example of this can be seen when the user is inputting the number of rows they would like to play with, it checks the data to make sure it is an integer and if it is under the ten thousand limit.</li>
+                    <br>
+                    <li>My game is interactive and operable in a variety of modes, <strong>single-player, multi-player and simulation-play</strong>. If 'simulation-play' is chosen, the user is prompted to input the number of games the simulation will iterate through. The addition of 'simulation-play' allows data to be efficiently collected across many games.</li>
+                </ol>
+            </p>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections" id="board-images">
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_1" src="images/board1.png" width="70%">
+                        <p class="image-label">The board in winning state for O</p>
+                    </div>
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_2" src="images/board2.png" width="70%">
+                        <p class="image-label">The board in a winning state for X</p>
+                    </div>
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_3" src="images/board3.png" width ="70%">
+                        <p class="image-label">The board in a draw state</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections" id="advanced-requirements">
+            <h5 class="heading">Advanced requirements</h5>
+            <p>
+                <img class="an-image" id="meet-breif-advanced" alt="board_1" src="images/validation_of_int.png" width="65%" style="float: right;">
+                <ol>
+                    <li>The next requirement I set out to complete was to extend the basic model so that each time it is run, it <strong>stores the resulting data from the game in a CSV file</strong>. This CSV file contains the number of moves it took to complete a game and how the player won the game i.e. horizontally, vertically, diagonally or if it was a draw.</li>
+                    <br>
+                    <li>I developed algorithms that perform some <strong>statistical analysis</strong> on the data I collected from each game. I found the mean, the median, the mode, and the standard deviation of the number of moves it takes to win the game. That data is displayed through the console but also displayed through a 'matplotlib' <strong>histogram in a graphical format</strong>, which displays the number of moves per game.</li>
+                    <br>
+                    <li>My initial <strong>hypothesis</strong> was, <strong>the player puts their first piece into the middle column, they would have a higher success rate of winning than a player who puts their first piece on the side columns of the board</strong>. I used simulation-play mode to test my hypothesis by collecting data on 10,000 games. This data allowed me to prove whether my hypothesis was correct or not. I <strong>predicted</strong> if I <strong>changed the parameters</strong>, by increasing the board size, it wouldn't affect the results of the hypothesis. The results are presented in my report.</li>
+                </ol>
+            </p>
+        </div>
+        <div class="text-sections" id="investigation-and-plan">
+            <h4>Investigation and Plan</h4>
+            <!-- <h5 class="heading">What I looked for</h5> -->
+            <p>
+                <img class="an-image" id="meet-breif-advanced" alt="board_1" src="images/brief_model.png" width="50%" style="float: right;">
+                The <strong>thematic brief</strong> requires you to develop an interactive model based on games. The brief gave different examples, such as cards, dice, board, or children's games.
+                <br><br>
+                References <a style="color: aqua;" href="#references">[1]</a> - <a style="color: aqua;" href="#references">[5]</a> considered the concept of a physical model and simulation. Researching the video about Simulating Natural Selection <a style="color: aqua;" href="#references">[4]</a> helped me understand simulation is based on defined rules which use randomness. It led me to believe I could implement Natural Selection via generational neural networks. On further research of the brief, I realised that including generational neural networks wasn't necessary. Investigating analytics <a style="color: aqua;" href="#references">[6]</a> informed me of the use of data analytics to predict a simulated model's outcome. From <a style="color: aqua;" href="#references">[7]</a> I learned that game design methodology is based on the level of abstraction of game mechanics. I also read some python websites on how to use classes to develop a game <a style="color: aqua;" href="#references">[8]</a>, <a style="color: aqua;" href="#references">[9]</a>. During this project, I used my course book for data analytics <a style="color: aqua;" href="#references">[10]</a>. In addition, I have used w3schools <a style="color: aqua;" href="#references">[11]</a> to help me with creating my website navbar.
+                <br><br>
+                After reviewing the brief, I developed some preliminary selection criteria:
+            </p>
+            <ol class="investigation">
+                <li>The difficulty and feasibility of designing and implementing a model of the game.</li>
+                <li>How I was going to <strong>abstract the rules</strong> of the game.</li>
+                <li>Could I simplify the game if it was too complex.</li>
+                <li>The suitability of the game data I would collect for modelling, simulation and analysis.</li>
+            </ol>
+            <p>
+                I carried out several web searches for the best game that would fit the points above. I considered the following games:
+            </p>
+            <ol class="investigation">
+                <li>Rock, Paper, Scissors.</li>
+                <li>Chess.</li>
+                <li><strong>Connect Four</strong>.</li>
+            </ol>
+            <p>
+                I found game 1, Rock, Paper, Scissors, to be too simple and that there was no strategy involved. It would be difficult for me to generate usable data to formulate a hypothesis. When evaluating game 2, Chess, I realised that it wouldn't be feasible to implement the game as chess is very strategic and too complicated. On reviewing game 3, Connect Four, I determined it would fit all my preliminary selection criteria.
+                <br><br>
+                My <strong>objective for my project</strong> was to implement Connect Four as a simple text-based interactive interface. I would test my hypothesis by analysing data stored in a CSV file which includes game outcome data.
+                <br><br>
+                I've created a lot of games in the past and my concern was that Connect Four would be too simple using the original board size. Therefore I determined that I should make my game more difficult. To achieve this the board size could be increased at the choice of the player, and the number of connecting pieces to win could be increased. That is why I called my game 'Connect X'.
+            </p>
+        </div>
+        <div class="text-sections" id="design">
+            <h4>Design</h4>
+            <p>
+                I first created a <strong>high-level flowchart chart</strong> to visualise the structure of my game. This allowed me to <strong>model</strong> the essential parts and implement the main code loop. It helped me identify the likely parts of my code I would integrate into individual functions. My flowchart is shown in the diagram below. It captures the operations of the multi-player mode.
+            </p>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections" id="board-images">
+                    <div class="image-and-labels">
+                        <img alt="Flowchart" src="images/Flowchart_colour.png" width="100%">
+                        <p class="image-label"><br>High level flowchart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections">
+            <p>
+                The only difference between the multi-player and the other two modes is that, instead of asking the human player for the column choice, the other modes would pick a random available column to slot its piece into when it's the computer's turn.
+                <br><br>
+                If a human player tries to input a piece into an invalid column, the program prompts the user to select a column from a valid list of options.
+                <br><br>
+                I designed my program to only iterate once when it is the computer players turn to pick a random input. It does this by gathering the list of columns available to be slotted into and picking a random index from that list; by implementing it like this, it is more efficient than iterating through a 'hard coded' list of numbers.
+                <br><br>
+                When modelling 'Connect X', I found that the most important design decision I had to make was how my program displayed the board. I realised that printing the board to the console was all that was necessary to meet my <strong>objective of a simple text-based interface</strong>. Creating a graphical display wasn't a requirement of the brief.<strong>abstraction</strong> described in the brief.
+                <br><br>
+                I designed the game to fit the original board size at first and then adapted it to work for any board size and any number of connecting pieces to win. I also cleaned up my code by implementing classes. The first part of the game 'start.py' sets up the game so that when 'game.py' gets called to run, it has all the parameters the user has chosen. The game file automatically temporarily stores information about each game being run and appends the data to a CSV file for future data analytics. I use the libraries matplotlib and seaborn to create my graphs.
+            </p>
+        </div>
+        <div class="text-sections" id="implementation">
+            <h4>Implementation</h4>
+            <p>
+                I used an iterative approach to develop my artefact. After I abstracted rules, I decomposed my implementation and wrote down these six clearly defined steps that enabled me to implement my project objectives in a modular fashion:
+            </p>
+            <ul>
+                <li>Replicating Connect Four through my abstracted rules with multi-player.</li>
+                <li>Adding single-player and simulation-play.</li>
+                <li>Enable the user to change the size of the board.</li>
+                <li>Enable the user to change the number of connecting pieces to win.</li>
+                <li>Including Data capture.</li>
+                <li>Including Data analysis and visualisation.</li>
+            </ul>
+            <p>
+                The final game model is included in my submission as 'game.py' under the 'Artefact' folder. In order to run the program you must run the 'run.py' file e.g. type <strong>'python run.py'</strong> into your console. The following table is a list of all the functions involved in the program 'game.py' file and their purpose:
+            </p>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections">
+                    <div class="image-and-labels">
+                        <div class="test-case-table">
+                            <p><strong>Function Table</strong></p>
+                            <table class="box" align="center">
+                                <tr>
+                                    <th class="box">Function Name</th>
+                                    <th class="box">Description</th>
+                                    <th class="box">Filename</th>
+                                </tr>
+                                <tr>
+                                    <td class="box">connected_to_internet</td>
+                                    <td class="box">
+                                        Check if it connected to the internet by pinging google.com
+                                    </td>
+                                    <td class="box">run.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">library_install_online</td>
+                                    <td class="box">
+                                        Install requirements if necessary
+                                    </td>
+                                    <td class="box">run.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">__init__</td>
+                                    <td class="box">
+                                        Starts the game and it is responsible for taking the first dimension inputs for the game
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">welcome_message</td>
+                                    <td class="box">
+                                        Welcomes the user and displays the rules
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">dimension_check</td>
+                                    <td class="box">
+                                        Asks for custom dimensions
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">check_for_quit</td>
+                                    <td class="box">
+                                        Checks if the player has decided to quit
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">small_input_check</td>
+                                    <td class="box">
+                                        Gets an input till requirements from a function or in a list is met
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">validation_value</td>
+                                    <td class="box">
+                                        Checks if the game has valid values
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">validation_of_int</td>
+                                    <td class="box">
+                                        Validation function that makes the input an int if it is valid
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">print_error</td>
+                                    <td class="box">
+                                        Prints the error to the console
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">validation_manager</td>
+                                    <td class="box">
+                                        Manages all the different validation functions
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">dimensions</td>
+                                    <td class="box">
+                                        Gets the dimensions of the grid, connected symbols and what mode that they want
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">selection</td>
+                                    <td class="box">
+                                        Figure out the options of the games with conditionals, and runs necessary functions
+                                    </td>
+                                    <td class="box">start.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">__init__</td>
+                                    <td class="box">
+                                        The __init__ function is an in-built function in python to declare the class variables
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">display</td>
+                                    <td class="box">
+                                        Displays the board to the console based on the board matrix
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">check_columns</td>
+                                    <td class="box">
+                                        Checks the top row to the board to figure out what columns aren't full
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">move</td>
+                                    <td class="box">
+                                        Based on the column selected to insert they're piece, the board will update
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">check_for_quit</td>
+                                    <td class="box">
+                                        Checks if the player has decided to quit
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">check_game</td>
+                                    <td class="box">
+                                        Checks if the game is over either vertically, horizontally, diagonally or is a draw
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">get_input</td>
+                                    <td class="box">
+                                        Gets the input from the human user
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">game_over</td>
+                                    <td class="box">
+                                        Deals with the game being over or exited
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">run</td>
+                                    <td class="box">
+                                        The main run loop
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">npc_input</td>
+                                    <td class="box">
+                                        Non-player-character that randomly selects one of the available columns
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">human_input</td>
+                                    <td class="box">
+                                        Gets the human input from the user it also displays the available columns to input into
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">log</td>
+                                    <td class="box">
+                                        Logs the end state of the game to a CSV file (only runs if self.LOG is enabled)
+                                    </td>
+                                    <td class="box">game.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">get_probabilities</td>
+                                    <td class="box">
+                                        Analyses the data and find the most optimal first move based on that data
+                                    </td>
+                                    <td class="box">analyses.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">game_analytics</td>
+                                    <td class="box">
+                                        This function is used to analyze the data in every game
+                                    </td>
+                                    <td class="box">analyses.py</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">unit_tests</td>
+                                    <td class="box">
+                                        Tests functions from the main program
+                                    </td>
+                                    <td class="box">unit_test.py</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections">
+            <p>
+                As I was developing my game, I hit two <strong>difficult problems</strong>. Firstly I had problems with repeating code. Adding <strong>functions</strong> helped separate the code into blocks. The second problem was, I had to make lots of variables <strong>global</strong> in each function, or else I had to import all the necessary <strong>parameters</strong> into each function. This made it hard to develop the game further as it was cluttered. <strong>Classes</strong> solved my problems because I had class variables that would work for every function if I imported 'self' into their parameters.
+                <img class="an-image" id="meet-breif-basic" alt="board_1" src="images/class.png" width="50%" style="float: right;">
+                <br><br>
+                The most complex and important <strong>algorithm</strong> I implemented was the function to check if the game was finished. This was particularly difficult in Connect Four because it was an <strong>exhaustive algorithm</strong>: vertically, horizontally and diagonally. Enabling the user to change the size of the board and to change the number of connecting pieces to win made the logic more difficult. Using <strong>abstraction</strong>, I represented my board using a list of lists also known as a matrix or a 2D array. This made the game easier to implement.
+                <img class="an-image" id="meet-breif-advanced" alt="board_1" src="images/horizontal_win.png" width="50%" style="float: right;">
+                <br><br>
+                When programming Connect Four with the original dimensions, I had an <i>if statement</i> to check for four connecting pieces. This code wouldn't work if you increased it to Connect Five. I solved this by adding a <i>for loop</i> which looped over the <i>if statement</i>.
+                <br><br>
+                The <i>for loops</i> in the function know to iterate through all the moves via the following algorithms in the file 'game.py':
+            </p>
+            <ol>
+                <li>
+                    <strong>For each row check the number of possible horizontal wins</strong>:
+                    rows * (row length - connected pieces to win) = the total number of horizontal wins possible
+                    (lines 119 - 128)
+                </li>
+                <li>
+                    <strong>For each column check the number of possible horizontal wins</strong>:
+                    columns * (column_length - connected pieces to win) = the total number of vertical wins possible
+                    (lines 130 - 140)
+                </li>
+                <li>
+                    <strong>For each row check the number of possible horizontal wins</strong>:
+                    2 * ((row length - (connected pieces to win- 1)) * (column length - (connected pieces to win - 1))) = the total number of diagonal wins possible
+                    (lines 142 - 168)
+                </li>
+                <li>
+                    <strong>If none of those is true and the board is filled, it considers the game to be a draw</strong>.
+                    (lines 170 - 174)
+                </li>
+            </ol>
+            <p>
+                My next step was to develop the code for data analytics. I developed my analytics in a way that would test my hypothesis. I added code to append game data into a CSV file, such as: the end state of the game, what player won the game, and what random column they selected first when in simulation-play mode. After running 10,000 games, I tallied up the total wins for each column and divided that by the number of games (10,000). The results are presented in the evaluation section.
+            </p>
+        </div>
+        <div class="text-sections" id="testing">
+            <h4>Testing</h4>
+            <p>
+                One of the first forms of testing I unconsciously did, was using 'print()' functions to see what was stored in certain variables at different places in the program. Playing the game and going through every possible user choice, allowed me to check that the logic had been implemented correctly. I also got a few of my friends to try and break my game in any way through the interface. They acted as the game's <strong>alpha testers</strong>.
+            </p>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections">
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_1" src="images/unit_test.png" width="70%">
+                    </div>
+                    <div class="image-and-labels">
+                        <p>Unit Test Results</p>
+                        <img class="an-image" alt="board_1" src="images/unit_test_result.png" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections">
+            <p>
+                The original game used colour to help the user distinguish the difference between the pieces. In the console, I only had the use of one colour. I originally labelled the pieces with 'R' being red and 'Y' being yellow. When my friends were testing my game they found it difficult to see the difference between the 'R' and the 'Y'. The game X's & O's has a similar problem: it has no colours but has two very distinct shapes that are easy to spot among each other. Once I realised how effective it was, it led me to change my design and use an 'X' and an 'O' as my pieces <strong>as a result of my testing</strong>.
+            </p>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections">
+                    <div class="image-and-labels">
+                        <div class="test-case-table">
+                            <p><strong>Connect Four test case table</strong></p>
+                            <table class="box" align="center">
+                                <tr>
+                                    <th class="box">ID</th>
+                                    <th class="box">Description</th>
+                                    <th class="box">Test Data</th>
+                                    <th class="box">Expected Result</th>
+                                    <th class="box">Actual Result</th>
+                                    <th class="box">Passed or Failed</th>
+                                </tr>
+                                <tr>
+                                    <td class="box">0</td>
+                                    <td class="box">
+                                        Data where<br>
+                                        Player 1 (X)<br>
+                                        wins the game<br>
+                                        horizontally
+                                    </td>
+                                    <td class="data">
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 2, 0, 0, 0, 0, 0],<br>
+                                        [0, 1, 0, 1, 0, 0, 2],<br>
+                                        [0, 1, 2, 2, 0, 0, 1],<br>
+                                        [2, 2, 1, 1, 1, 1, 2]
+                                    </td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">1</td>
+                                    <td class="box">
+                                        Data where the<br>
+                                        game hasn't<br>
+                                        started so no<br>
+                                        players have<br>
+                                        won the<br>
+                                        game yet
+                                    </td>
+                                    <td class="data">
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 0, 0, 0, 0, 0, 0]
+                                    </td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">2</td>
+                                    <td class="box">
+                                        Data where<br>
+                                        Player 1 (X)<br>
+                                        wins the game<br>
+                                        vertically
+                                    </td>
+                                    <td class="data">
+                                        [1, 0, 0, 0, 0, 0, 0],<br>
+                                        [1, 0, 0, 2, 0, 0, 1],<br>
+                                        [2, 0, 0, 1, 2, 2, 1],<br>
+                                        [1, 2, 0, 2, 1, 2, 1],<br>
+                                        [1, 2, 0, 2, 1, 1, 1],<br>
+                                        [1, 2, 0, 1, 2, 2, 2]
+                                    </td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">3</td>
+                                    <td class="box">
+                                        Data where the<br>
+                                        game was started<br>
+                                        and no one has<br>
+                                        won yet
+                                    </td>
+                                    <td class="data">
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 0, 0, 0, 0, 0, 0],<br>
+                                        [0, 0, 2, 0, 0, 0, 2],<br>
+                                        [0, 0, 2, 0, 1, 1, 2],<br>
+                                        [1, 0, 1, 1, 2, 1, 2],<br>
+                                        [1, 0, 2, 1, 1, 2, 1]
+                                    </td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">4</td>
+                                    <td class="box">
+                                        Data where<br>
+                                        Player 2 (O)<br>
+                                        wins the game<br>
+                                        diagonally
+                                    </td>
+                                    <td class="data">
+                                        [0, 0, 1, 0, 2, 0, 0],<br>
+                                        [0, 0, 2, 0, 1, 0, 0],<br>
+                                        [0, 0, 2, 0, 1, 0, 1],<br>
+                                        [0, 1, 1, 2, 2, 1, 2],<br>
+                                        [0, 2, 2, 1, 2, 1, 2],<br>
+                                        [0, 1, 1, 1, 2, 2, 2]
+                                    </td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections">
+            <p>
+                A big part of my debugging process was using the IDE's built-in Debugger. Following this, I created a <strong>test case table</strong> to <strong>systematically test the logic</strong> in my game. I programmed a <strong>unit test</strong> that could in-take states of games from a CSV file ('test_data.csv'). It then ran the game states through the 'check_game()' function, it compared its output to the answers which were in another CSV file ('answer_data.csv'). When testing my game with the unit test I found out that my game did not pick up on every diagonal win position. This was due to my faulty logic. After fixing this <strong>problem</strong> with the IDE Debugger, I iterated through the design process. I have also included a <strong>test case table</strong> on my <strong>validation</strong> function to make sure that the game was validating properly.
+            </p>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections">
+                    <div class="image-and-labels">
+                        <div class="test-case-table">
+                            <p><strong>Test Case Table on Validtion funtion</strong></p>
+                            <table class="box" align="center">
+                                <tr>
+                                    <th class="box">ID</th>
+                                    <th class="box">Description</th>
+                                    <th class="box">Test Data</th>
+                                    <th class="box">Expected Result</th>
+                                    <th class="box">Actual Result</th>
+                                    <th class="box">Passed or Failed</th>
+                                </tr>
+                                <tr>
+                                    <td class="box">0</td>
+                                    <td class="box">
+                                        Natural<br>
+                                        Number<br>
+                                        Value
+                                    </td>
+                                    <td class="bool">
+                                        4
+                                    </td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">1</td>
+                                    <td class="box">
+                                        Negative<br>
+                                        Integer<br>
+                                        Value
+                                    </td>
+                                    <td class="bool">
+                                        -3
+                                    </td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">2</td>
+                                    <td class="box">
+                                        Extremely<br>
+                                        Large<br>
+                                        Natural<br>
+                                        Number<br>
+                                        Value
+                                    </td>
+                                    <td class="bool">
+                                        1000000000000000
+                                    </td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">True</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">3</td>
+                                    <td class="box">
+                                        Extremely<br>
+                                        Small<br>
+                                        Real<br>
+                                        Number<br>
+                                        Value
+                                    </td>
+                                    <td class="bool">
+                                        0.000000000000001
+                                    </td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                                <tr>
+                                    <td class="box">4</td>
+                                    <td class="box">
+                                        String <br>
+                                        Value
+                                    </td>
+                                    <td class="bool">
+                                        Hello World!
+                                    </td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">False</td>
+                                    <td class="bool">Passed</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections" id="evaluation">
+            <h4>Evaluation</h4>
+            <p>
+                While evaluating my project I looked back at the brief. I have created a model to be an exact replica of the real-world physical game Connect Four. I investigated different games and after picking Connect Four I designed a model, abstracted the game and implemented the game in python with analytics. I increased the difficulty of the game to meet more of what I thought the brief wanted.
+                <br><br>
+                I ran the game 10,000 times in simulation-play mode and stored all the data in a CSV file. Using matplotlib I created a line distribution to display the results to check if my hypothesis was correct. Clearly, it wasn't and was practically the opposite of my hypothesis.
+            </p>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections" id="board-images">
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_1" src="images/Figure_4.png" width="70%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections">
+            <p>
+                Looking at the graphs, placing your first piece in the middle had the worst probability of winning. There is an advantage if you place your first piece on the sides of the board. This proved my hypothesis wrong.
+                <br><br>
+                I also predicted that if I changed the parameters, by increasing the board size, it wouldn't affect the results of the hypothesis. This was proven to be right.
+            </p>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections" id="board-images">
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_1" src="images/Figure_5.png" width="70%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections">
+            <p>
+                I think my project could be improved in various ways. One of the biggest factors is the difficulty of the game. My current game only uses random inputs as its strategy. This makes it really easy to win the game against the computer because the computer is very naive. In order to overcome this, I would either have to hard code an <strong>exhaustive</strong>, rule-based strategy or create some sort of machine learning to think ahead and act as a more difficult opponent. If I implemented these changes it would make it act more like a <strong>real-world simulation model</strong>.
+                <br><br>
+                Other small features I could add to improve my game are:
+            </p>
+            <ul>
+                <li>Add hints if wanted.</li>
+                <li>Develop a graphical interface with <strong>universal design</strong>.</li>
+                <li>Be able to undo a move if you miss-clicked.</li>
+                <li>Include a leaderboard system to check the best records.</li>
+            </ul>
+        </div>
+        <div class="blank-spaces">
+            <div class="centre-div">
+                <div class="image-sections" id="board-images">
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_1" src="images/Figure_1.png" width="70%">
+                        <p class="image-label">This is a histogram of number of the moves per game</p>
+                    </div>
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_2" src="images/Figure_3.png" width="70%">
+                        <p class="image-label">This is a histogram is overlayed with a line distribution of the number of moves per game</p>
+                    </div>
+                    <div class="image-and-labels">
+                        <img class="an-image" alt="board_3" src="images/Figure_2.png" width ="70%">
+                        <p class="image-label">This is a line distribution of the number of moves per game</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-sections" id="references">
+            <h4 id="reference">References</h4>
+            <div class="reference">
+                <div class="list">
+                    <h5 class="list">Websites:</h5>
+                    <ol class="websites">
+                        <li><a style="color: aqua;" href="https://phet.colorado.edu/">https://phet.colorado.edu/</a></li>
+                        <li><a style="color: aqua;" href="https://www.itgsnews.com/computer-models-simulations-models/">https://www.itgsnews.com/computer-models-simulations-models/</a></li>
+                        <li><a style="color: aqua;" href="https://education.mit.edu/project/starlogo-nova/">https://education.mit.edu/project/starlogo-nova/</a></li>
+                        <li><a style="color: aqua;" href="https://www.youtube.com/watch?v=0ZGbIKd0XrM">https://www.youtube.com/watch?v=0ZGbIKd0XrM</a></li>
+                        <li><a style="color: aqua;" href="https://ethics.csc.ncsu.edu/risks/models/examples.php">https://ethics.csc.ncsu.edu/risks/models/examples.php</a></li>
+                        <li><a style="color: aqua;" href="https://helloworld.raspberrypi.org/issues/10 (page 72)">https://helloworld.raspberrypi.org/issues/10 (page 72)</a></li>
+                        <li><a style="color: aqua;" href="http://www.red3d.com/cwr/boids/">http://www.red3d.com/cwr/boids/</a></li>
+                        <li><a style="color: aqua;" href="https://www.sas.com/en_us/insights/analytics/what-is-analytics.html">https://www.sas.com/en_us/insights/analytics/what-is-analytics.html</a></li>
+                        <li><a style="color: aqua;" href="https://www.gamedeveloper.com/design/levels-of-abstraction-in-game-design">https://www.gamedeveloper.com/design/levels-of-abstraction-in-game-design</a></li>
+                        <li><a style="color: aqua;" href="https://realpython.com/simpy-simulating-with-python/">https://realpython.com/simpy-simulating-with-python/</a></li>
+                        <li><a style="color: aqua;" href="https://connect4.org/">https://connect4.org/</a></li>
+                        <li><a style="color: aqua;" href="https://www.w3schools.com/html/html_tables.asp">https://www.w3schools.com/html/html_tables.asp</a></li>
+                        <li><a style="color: aqua;" href="https://www.w3schools.com/howto/howto_js_topnav.asp">https://www.w3schools.com/howto/howto_js_topnav.asp</a></li>
+                        <li><a style="color: aqua;" href="https://carbon.pogr.cc/">https://carbon.pogr.cc/</a></li>
+                        <li><a style="color: aqua;" href="https://www.geeksforgeeks.org/python-matrix/">https://www.geeksforgeeks.org/python-matrix/</a></li>
+                        <li><a style="color: aqua;" href="https://www.scissorpaperrock.com/">https://www.scissorpaperrock.com/</a></li>
+                        <li><a style="color: aqua;" href="https://www.codespeedy.com/how-to-check-the-internet-connection-in-python/">https://www.codespeedy.com/how-to-check-the-internet-connection-in-python/</a></li>
+                    </ol>
+                </div>
+            </div>
+        <div class="text-sections" id="summary-word-count">
+            <h4>Summary word count</h4>
+            <table class="box" align="center">
+                <tr>
+                    <th class="box">Section</th>
+                    <th class="box">Word Count</th>
+                </tr>
+                <tr>
+                    <td class="box">1. Meeting the Brief</td>
+                    <td class="box">482</td>
+                </tr>   
+                <tr>
+                    <td class="box">2. Investigation and Plan</td>
+                    <td class="box">431</td>
+                </tr>
+                <tr>
+                    <td class="box">3. Design</td>
+                    <td class="box">351</td>
+                </tr>
+                <tr>
+                    <td class="box">4. Implementation</td>
+                    <td class="box">582</td>
+                </tr>
+                <tr>
+                    <td class="box">5. Testing</td>
+                    <td class="box">329</td>
+                </tr>
+                <tr>
+                    <td class="box">6. Evaluation</td>
+                    <td class="box">320</td>
+                </tr>
+                <tr>
+                    <td class="box"><strong>Total:</strong></td>
+                    <td class="box"><strong>2496</strong></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
